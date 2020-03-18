@@ -426,8 +426,8 @@ CPFS () {
 	echo "useradd -g sudo -m -s /bin/zsh $usenm" | sudo tee -a $bb7/init.sh
 	echo "echo $usenm:$pword | chpasswd" | sudo tee -a $bb7/init.sh
 	qts='"'
-	hk="hikey970"
-	adr="127.0.0.1 hikey970"
+	hk="bor-hikey-970"
+	adr="127.0.0.1 bor-hikey-970"
 	echo "echo $qts#made by $usenm$qts >> /home/$usenm/.zshrc" | sudo tee -a $bb7/init.sh
 	echo "passwd -d root" | sudo tee -a $bb7/init.sh
 	echo "rm -rf /debootstrap" | sudo tee -a $bb7/init.sh
@@ -482,9 +482,9 @@ CPFS () {
 }
 
 MKIMG () {
-DISTRO=${DISTRO:-"bionic"}
-VERSION=V-2.0
-SYSTEM_SIZE=${SYSTEM_SIZE:-'2560'} # 1G
+DISTRO=${DISTRO:-"xubuntu-bionic"}
+VERSION=bor-V-1.0
+SYSTEM_SIZE=${SYSTEM_SIZE:-'4096'} # 4Gb
 echo "Building image" $SYSTEM_SIZE
 dd if=/dev/zero of=$bb2/rootfs.img bs=1M count=$SYSTEM_SIZE conv=sparse
 mkfs.ext4 -L rootfs $bb2/rootfs.img
@@ -841,12 +841,12 @@ set -ue -o pipefail
 ### Notify Start of Script
 resize -s 30 82
 clear
-echo "$bb Starting Build Script BIONIC-BUILDER UBUNTU 18.04 $nl"
+echo "$bb Starting Build Script BIONIC-BUILDER XUBUNTU 18.04 $nl"
 echo ""
-echo "$yt Bionic-Buddy is a All in 1 Setup Script For Hikey970 $nl"
+echo "$yt BIONIC-BUILDER is a All in 1 Setup Script For Hikey970 $nl"
 echo "$yt View Readme or visit https://github.com/Bigcountry907/Bionic-Builder $nl"
-echo "$yt Created by BigCountry907 @ https://discuss.96boards.org/c/products/hikey970 $nl"
-echo ""
+echo "$yt Originally Created by BigCountry907 @ https://discuss.96boards.org/c/products/hikey970 $nl"
+echo "$yt Modified by xdaco xdaco.xinu@gmail.com $nl"
 c=5
 REWRITE="\e[25D\e[1A\e[K"
 echo "Starting..."
