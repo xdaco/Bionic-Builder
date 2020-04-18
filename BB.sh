@@ -162,7 +162,7 @@ stop1
 mkdir $ksrc
 chmod 755 $ksrc
 cd $ksrc
-git clone https://github.com/Bigcountry907/linux.git -b hikey970-v4.9-Debain-Working
+git clone https://github.com/xdaco/hikey970-ubuntu-kernel-source.git
 chmod 755 $ksrc/linux
 CMP
 }
